@@ -12,3 +12,8 @@
  *
  * Your goal should be to have your queries remain correct even if the data in the database changes arbitrarily.
  */
+select count(first_name) from customer as c
+join address as a using (address_id)
+join city  using(city_id)
+join country using(country_id)
+where country.country_id != 103;

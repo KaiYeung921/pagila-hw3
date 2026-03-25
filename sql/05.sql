@@ -6,3 +6,8 @@
  * HINT:
  * This can be solved with a self join on the film_actor table.
  */
+
+select title from film
+join film_actor using(film_id)
+where actor_id in (
+select actor_id from film_actor where film_id =21) order by title;
